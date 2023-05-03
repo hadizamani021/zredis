@@ -2,12 +2,10 @@ use std::{
     io::{prelude::*},
     net::{TcpListener, TcpStream},
 };
-use resp::{encode, Value};
 
 fn handle_pong(mut stream: TcpStream) {
-    let response = Value::String("PONG".to_string());
-    let response = encode(&response);
-    stream.write_all(&response).unwrap();
+    let response = "+PONG\r\n";
+    stream.write(response.as_bytes()).unwrap();
 }
 
 fn main() {
