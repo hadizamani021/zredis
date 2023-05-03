@@ -153,6 +153,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "bytes",
+ "resp",
  "thiserror",
  "tokio",
 ]
@@ -165,6 +166,12 @@ checksum = "fb5a58c1855b4b6819d59012155603f0b22ad30cad752600aadfcb695265519a"
 dependencies = [
  "bitflags",
 ]
+
+[[package]]
+name = "resp"
+version = "1.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3d276d153c2c18b622527a9118d8055e4e26530f15d616d6290b00acc7e2f6aa"
 
 [[package]]
 name = "scopeguard"
