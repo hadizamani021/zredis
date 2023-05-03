@@ -14,7 +14,9 @@ fn main() {
     let listener = TcpListener::bind("127.0.0.1:6379").unwrap();
     for stream in listener.incoming() {
         match stream {
-            Ok(stream) => {
+            Ok(mut stream) => {
+                let mut buf = [0; 512];
+                stream.read(&mut buf).unwrap();
                 handle_pong(stream);
                 println!("handle one request successfully.")
             }
