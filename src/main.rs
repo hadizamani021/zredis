@@ -18,7 +18,6 @@ fn main() {
                 let mut buf = [0; 512];
                 stream.read(&mut buf).unwrap();
                 handle_pong(stream);
-                println!("handle one request successfully.")
             }
             Err(e) => {
                 println!("error: {}", e);
